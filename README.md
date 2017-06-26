@@ -1,8 +1,8 @@
 
-# ARFC Homepage
+# NECX Project Page
 
-This is the repository that holds the hompage for the Advanced Reactors and 
-Fuel Cycles group.  
+This is the repository that holds the project work for the Nuclear Engineering 
+Curriculum eXchange.
 
 ## Building This Website
 
