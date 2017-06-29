@@ -1,11 +1,10 @@
 # Site settings
 title: NECX
 email: katyhuff@gmail.com
-description: "Website for the Strategic Instructional Innovations Program Project: Collaborative Open-Source Curiculum Development"
-baseurl: "/necx" # the subpath of your site, e.g. /blog
-url: "https://arfc.github.io/necx" # the base hostname & protocol for your site
-twitter_username: katyhuff
-github_username: arfc
+description: "Website for the Nuclear Engineering Curriculum eXchange (NECX),  open repository for nuclear engineering curriculum materials intentionally prepared for reuse, remixing and rejeuvination."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://necx-org.github.io" # the base hostname & protocol for your site
+github_username: necx-org
 logo: "/img/nekx.png"
 
 # Agency color settings

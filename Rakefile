@@ -7,19 +7,19 @@ require "jekyll"
 require "jekyll/scholar"
 
 # Change your GitHub reponame
-GITHUB_REPONAME = "arfc/necx"
+GITHUB_REPONAME = "necx-org/necx-org.github.io"
 
 
 desc "Generate blog files"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
-    "site-source"      => ".",
+    "source"      => ".",
     "destination" => "_site"
   })).process
 end
 
 
-desc "Generate and publish blog to gh-pages"
+desc "Generate and publish blog to master"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
     cp_r "_site/.", tmp
@@ -27,17 +27,17 @@ task :publish => [:generate] do
 
     pwd = Dir.pwd
 
-    system "git checkout gh-pages"
+    system "git checkout master"
     system "rm -r *"
     cp_r "#{tmp}/.", "."
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     system "git commit -am #{message.inspect}"
     system "git remote add upstream git@github.com:#{GITHUB_REPONAME}.git"
-    system "git push upstream gh-pages --force"
+    system "git push upstream master --force"
 
     Dir.chdir pwd
-    system "git checkout site-source"
-    system "git push upstream site-source"
+    system "git checkout source"
+    system "git push upstream source"
   end
 end
