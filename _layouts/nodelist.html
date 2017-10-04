@@ -1,0 +1,21 @@
+---
+layout: page 
+---
+   <section id="node" class="{% cycle '', 'bg-light-gray' %}">
+        <div class="container">
+             <div class="row">
+             {% for node in site.nodes %}
+             {% if node.assessments %}
+             <h3><a href="{{ node.url }}">{{ node.title }}</a></h3>
+                <ul>
+                    {% for assessment in node.assessments %}
+                    <li><a href="{{ node.url }}/exercises/{{ assessment }}">{{ assessment }}</a></li>
+                    {% endfor %}
+                </ul>
+                    {% endif %}
+             {% endfor %}
+            </div>
+        </div>
+    </section>
+
+

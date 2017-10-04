@@ -20,6 +20,11 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+# include nodes
+collections: 
+  nodes:
+    output: true
+                
 permalink: pretty
 
 # Jekyll Scholar
