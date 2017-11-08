@@ -1,0 +1,3 @@
+[submodule "nodes"]
+	path = _nodes
+	url = git@github.com:necx-org/nodes
