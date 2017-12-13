@@ -7,4 +7,8 @@ permalink: /interim/
 
 ## Where
 
-We will gather weekly on google hangouts.
+We gather weekly on google hangouts.
+
+## Mid-Year Appraisal
+
+Our mid-year self-appraisal can be found [here.](./appraisal.pdf)
