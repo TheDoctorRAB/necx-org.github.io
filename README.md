@@ -21,10 +21,19 @@ This website should be maintained collectively by the members of the project.
    git@github.com:necx-org/necx-org.github.io`
 5. Use `git branch` to confirm that you are in the `source` branch.
 
+Now, you're ready to make changes to the website. There are a few types of
+changes that are common:
 
-### Render the Nodes 
+- Edits to the text
+- Adding yourself to the people page
+- Creating a manual entry or node description.
 
-1. change to the top-level directory for this repo
+### Rendering the nodes
+
+The curriculum content appears in [the nodes repository](https://github.com/necx-org/nodes). To render them within the website, follow these instructions:
+
+1. Do the setup steps above. 
+1. change to the top-level directory for this repo `cd necx-org.github.io`
 1. initialize the `_nodes` submodule with `git submodule init`
 1. update the `_nodes` submodule with `git submodule update`
 1. run a `jekyll serve` instance and look at http://localhost:4000/nodes/
@@ -32,16 +41,10 @@ This website should be maintained collectively by the members of the project.
 To review changes to nodes we need to pull in the nodes repository in a way that this repository understands it. The way to do this is with a submodule, as below.
 
 1. go to the `_nodes` directory
-1. checkout a branch that has the changes you are interested in reviewing
+2. checkout a branch that has the changes you are interested in reviewing
   * you may want/need to add another git remote to fetch those changes
-1. restart the jekyll server and look at http://localhost:4000/nodes/
+3. If you don't see your changes, you may need to restart the jekyll server (kill with `ctrl-c` and restart with `jekyll serve`)  and look at http://localhost:4000/nodes/
 
-Now, you're ready to make changes to the website. There are a few types of
-changes that are common:
-
-- Edits to the text
-- Adding yourself to the people page
-- Creating a manual entry or node description.
 
 
 ### Add Yourself: Customize
