@@ -8,9 +8,8 @@ Curriculum eXchange.
 
 This website should be maintained collectively by the members of the project.
 
-### Add Yourself: Set Up
+### Set Up
 
-One fun exercise to get started with this website is to add yourself to the people page.
 
 1. (Optional) Install the build dependencies for the website. These include ruby, jekyll,
    and jekyll-scholar. Get started [here.](https://jekyllrb.com/docs/installation/).
@@ -21,6 +20,21 @@ One fun exercise to get started with this website is to add yourself to the peop
 4. Add the group fork as a remote. `cd necx-org.github.io && git remote add upstream
    git@github.com:necx-org/necx-org.github.io`
 
+
+### Render the Nodes 
+
+1. change to the top-level directory for this repo
+1. initialize the `_nodes` submodule with `git submodule init`
+1. update the `_nodes` submodule with `git submodule update`
+1. run a `jekyll serve` instance and look at http://localhost:4000/nodes/
+
+To review changes to nodes we need to pull in the nodes repository in a way that this repository understands it. The way to do this is with a submodule, as below.
+
+1. go to the `_nodes` directory
+1. checkout a branch that has the changes you are interested in reviewing
+  * you may want/need to add another git remote to fetch those changes
+1. restart the jekyll server and look at http://localhost:4000/nodes/
+
 Now, you're ready to make changes to the website. There are a few types of
 changes that are common:
 
@@ -28,9 +42,10 @@ changes that are common:
 - Adding yourself to the people page
 - Creating a manual entry or node description.
 
-See below for directions on adding yourself. Additional instructions are forthcoming.
 
 ### Add Yourself: Customize
+
+One fun exercise to get started with this website is to add yourself to the people page.
 
 1. Once you have done the set up steps, enter the source branch of the repository. `git checkout source`
 2. Add your photo to the repository (in img/people). If your name is Jane Doe, call it `doej.png`.
@@ -60,4 +75,3 @@ If you're new to contributing, here are some great resources:
 #### Markdown
 
 - [Markdown cheatsheet by GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-
