@@ -19,6 +19,7 @@ This website should be maintained collectively by the members of the project.
    git@github.com:USERNAME/necx-org.github.io`
 4. Add the group fork as a remote. `cd necx-org.github.io && git remote add upstream
    git@github.com:necx-org/necx-org.github.io`
+5. Use `git branch` to confirm that you are in the `source` branch.
 
 
 ### Render the Nodes 
