@@ -2,6 +2,8 @@
 layout: page 
 ---
    <section id="exercise" class="{% cycle '', 'bg-light-gray' %}">
+           <div class="container">
+                                <div class="row">
                 <article class="post-content">
                         {{ page.text }} 
 		</article>
@@ -14,6 +16,8 @@ layout: page
 		{% elsif page.type == "ShortAnswer" %}
                 {% endif %}
                 </ul>
+                                </div>
+           </div>
     </section>
 
 
