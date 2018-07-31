@@ -10,7 +10,7 @@ layout: page
                 <li>{{ objective }}</li>
                 {% endfor %}
                 </ul>
-                <h2>Prerequisites</h2>
+                <h2>Learn this first:</h2>
                 <ul>
                 {% for prereq in page.prerequisites %}
                 {% for node in site.nodes %}
@@ -20,6 +20,17 @@ layout: page
                 {% endfor %}
                 {% endfor %}
                 </ul>
+                <h2>Learn this next:</h2>
+                <ul>
+                {% for node in site.nodes %}
+                {% for prereq in node.prerequisites %}
+                {% if prereq == page.uuid %}
+                <li><a href="../../{{ node.uuid }}/index">{{ node.title }} [{{ node.uuid }}]</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                </ul>
+                
                 <article class="post-content text-left">
                         {{content}}
                 </article>
