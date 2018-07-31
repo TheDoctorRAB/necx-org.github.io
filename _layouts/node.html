@@ -15,7 +15,7 @@ layout: page
                 {% for prereq in page.prerequisites %}
                 {% for node in site.nodes %}
                 {% if node.uuid == prereq %}
-                <li><a href="../{{ node.uuid }}">{{ node.title }} [{{ node.uuid }}]</a></li>
+                <li><a href="../../{{ node.uuid }}/index">{{ node.title }} [{{ node.uuid }}]</a></li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
