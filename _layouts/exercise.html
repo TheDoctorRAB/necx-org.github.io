@@ -1,0 +1,22 @@
+---
+layout: page 
+---
+   <section id="exercise" class="{% cycle '', 'bg-light-gray' %}">
+           <div class="container">
+                                <div class="row">
+                <article class="post-content">
+                        {{ page.text }} 
+		</article>
+                {% if page.type == 'MultipleChoice' %} 
+                <ol>
+                {% for option in page.options %}
+                <li>{{ option.value }}</li>
+                {% endfor %}
+                </ol>
+		{% elsif page.type == "ShortAnswer" %}
+                {% endif %}
+                </div>
+           </div>
+    </section>
+
+
