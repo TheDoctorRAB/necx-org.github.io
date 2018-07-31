@@ -5,7 +5,7 @@ layout: page
         <div class="container">
              <div class="row">
              {% for node in site.nodes %}
-             {% unless node.uuid contains 'template-node' or node.url contains '{{uuid}}'  %}  
+             {% unless node.url contains 'template-node' %}
              {% if node.assessments %}
              <h3><a href="{{ node.url }}">{{ node.title }}</a> <span class="uuid">[{{ node.uuid }}]</span></h3>
                 <ul>
