@@ -2,9 +2,9 @@
 layout: page 
 ---
    <section id="exercise" class="{% cycle '', 'bg-light-gray' %}">
-        <div class="container">
-             <div class="row">
-                {{ page.text }}
+                <article class="post-content text-left">
+                        {{ page.text }} 
+		</article>
                 {% if page.type == 'MultipleChoice' %} 
                 <ul>
                 {% for options in page.options %}
@@ -14,8 +14,6 @@ layout: page
 		{% elsif page.type == "ShortAnswer" %}
                 {% endif %}
                 </ul>
-            </div>
-        </div>
     </section>
 
 
