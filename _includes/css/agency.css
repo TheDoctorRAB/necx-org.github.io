@@ -57,6 +57,8 @@ h6 {
     font-weight: 700;
 }
 
+.uuid { text-transform: lowercase; font-weight: 100; }
+
 .img-centered {
     margin: 0 auto;
 }

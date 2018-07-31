@@ -5,14 +5,16 @@ layout: page
         <div class="container">
              <div class="row">
              {% for node in site.nodes %}
+             {% unless node.uuid contains 'template-node' or node.url contains '{{uuid}}'  %}  
              {% if node.assessments %}
-             <h3><a href="{{ node.url }}">{{ node.title }}</a></h3>
+             <h3><a href="{{ node.url }}">{{ node.title }}</a> <span class="uuid">[{{ node.uuid }}]</span></h3>
                 <ul>
                     {% for assessment in node.assessments %}
                     <li><a href="{{ node.url }}/../../exercises/{{ assessment }}">{{ assessment }}</a></li>
                     {% endfor %}
                 </ul>
-                    {% endif %}
+                {% endif %}
+                {% endunless %}
              {% endfor %}
             </div>
         </div>
