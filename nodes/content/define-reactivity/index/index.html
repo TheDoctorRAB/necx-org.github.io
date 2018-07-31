@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Nodes</title>
+  <title>Reactivity</title>
     <meta name="viewport" content="width=device-width">
-  <meta name="description" content="">
+  <meta name="description" content="Introduction">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://necx-org.github.io/nodes/">
+  <link rel="canonical" href="https://necx-org.github.io/nodes/content/define-reactivity/index/">
   <link rel="alternate" type="application/rss+xml" title="NECX" href="https://necx-org.github.io/feed.xml">
   <link rel="shortcut icon" href="https://necx-org.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -176,8 +176,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Nodes</h2>
-                    <h3 class="section-subheading text-muted">Nodes</h3>
+                    <h2 class="section-heading">Reactivity</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
                 
             </div>
@@ -185,164 +185,125 @@
        <section id="node" class="">
         <div class="container">
              <div class="row">
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/burnup-units/index/">Units for nuclear fuel burnup</a> <span class="uuid">[burnup-units]</span></h3>
+                <h2>Learning Objectives</h3>
                 <ul>
-                    
-                    <li><a href="/nodes/content/burnup-units/index//../../exercises/burnup-units">burnup-units</a></li>
-                    
+                
+                <li>Define the concept of reactivity as it pertains to the change in neutron multiplication</li>
+                
+                <li>Calculate the reactivity value for a given change in multiplication factor</li>
+                
+                <li>Describe and understand the units used to convey reactivity</li>
+                
+                <li>Relate the units of reactivity to the delayed neutron fraction \( \beta \)</li>
+                
                 </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/capacity-factor/index/">Capacity Factor</a> <span class="uuid">[capacity-factor]</span></h3>
+                <h2>Prerequisites</h2>
                 <ul>
-                    
-                    <li><a href="/nodes/content/capacity-factor/index//../../exercises/capacity-factor-calculation">capacity-factor-calculation</a></li>
-                    
-                    <li><a href="/nodes/content/capacity-factor/index//../../exercises/capacity-vs-availability">capacity-vs-availability</a></li>
-                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/define-burnup/index/">Define nuclear fuel burnup</a> <span class="uuid">[define-burnup]</span></h3>
+                <article class="post-content text-left">
+                        <h1 id="introduction">Introduction</h1>
+
+<p>Reactivity is used to represent the <strong>fractional change</strong> in the neutron population between each generation; i.e., a reactivity greater than zero implies that the neutron population is increasing (power is increasing), whereas a negative reactivity implies that the neutron population is decreasing (decreasing power).</p>
+
+<p>Typically in the context of reactor operations, we refer to reactivity as a means of maintaining equilibrium (steady-state) conditions within the core. That is, we look at the sum of various reactivity components (positive and negative) to determine the conditions required to maintain steady-state operations (such as how much fresh fuel to add, how much chemical shim or burnable poisons to include, and how much negative reactivity is needed in our control rods to safely control the reactor).</p>
+
+<h2 id="reactivity-in-an-infinite-reactor">Reactivity in an infinite reactor</h2>
+
+<p>For an infinitely large reactor (no leakage), the reactivity is defined in terms of the infinite multiplication factor (<script type="math/tex">k_\infty</script>) as:</p>
+
+<script type="math/tex; mode=display">\rho = \frac{k_\infty - 1}{k_\infty}</script>
+
+<h2 id="reactivity-for-a-finite-reactor">Reactivity for a finite reactor</h2>
+
+<script type="math/tex; mode=display">\rho = \frac{k - 1}{k}</script>
+
+<p>Recall from the six-factor formula, the finite multiplication factor is simply the infinite multiplication factor plus the fast (<script type="math/tex">P_F</script>) and thermal (<script type="math/tex">P_T</script>) non-leakage terms, i.e.:</p>
+
+<script type="math/tex; mode=display">k = P_{F} P_{T} k_\infty</script>
+
+<h1 id="units-of-reactivity-dollars-and-cents">Units of reactivity: Dollars and cents</h1>
+
+<p>Recall that the delayed neutron fraction of our reactor <script type="math/tex">\beta</script> plays a crucial role to reactor control and kinetics; i.e., so long as our reactor is delayed critical (or, more generally, “prompt subcritical” - i.e., where delayed neutrons push us to to <script type="math/tex">k \geq 1</script>), the reactor period is proportional to the delayed neutron lifetime (which is substantially longer than the prompt neutron lifetime); this is what makes our reactor controllable.</p>
+
+<p>As such, we define a special unit of reactivity change relative to the delayed neutron fraction in the reaction known as the dollar:</p>
+
+<script type="math/tex; mode=display">\text{Reactivity in \$} =\frac{\rho}{\beta}</script>
+
+<p>Thus, one dollar ($) of reactivity corresponds to the reactivity insertion required for the reactor to go from delayed critical to prompt critical.</p>
+
+<p>Similarly, one cent (¢) corresponds to one hundredth (0.01) of a dollar.</p>
+
+<p>For reference, recall that the delayed neutron fraction <script type="math/tex">\beta</script> for <script type="math/tex">{}^{235}</script>U is about 0.0065.</p>
+
+<h2 id="alternate-units-of-reactive-worth">Alternate units of reactive worth</h2>
+
+<p>Another alternate unit that frequently is used in characterizing the multiplication factor is pcm, or percent mille, which corresponds to one one-thousandth of one percent (or, 1E-5).</p>
+
+<p>For example, the reactor multiplication factor may change on the order a few hundred pcm between cold zero power and hot zero power conditions (due to the expansion of the moderator). This corresponds to a change in <script type="math/tex">k_{eff}</script> of:</p>
+
+<script type="math/tex; mode=display">\Delta k = 100\ \text{pcm} = 100 \cdot 10^{-5} = 0.001</script>
+
+
+                </article>
+                <h2>Assessments</h3>
                 <ul>
-                    
-                    <li><a href="/nodes/content/define-burnup/index//../../exercises/burnup-comparison">burnup-comparison</a></li>
-                    
+                
+                <li><a href="/nodes/content/define-reactivity/index//../../exercises/calculate-reactivity">calculate-reactivity</a></li>
+                
                 </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/define-reactivity/index/">Reactivity</a> <span class="uuid">[define-reactivity]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/define-reactivity/index//../../exercises/calculate-reactivity">calculate-reactivity</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-             <h3><a href="/nodes/content/n-batch-core/index/">Multi-batch core loading - the n-batch core</a> <span class="uuid">[n-batch-core]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/n-batch-core/index//../../exercises/TBD">TBD</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/poisson-distribution/index/">Poisson Distribution</a> <span class="uuid">[poisson-distibution]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/poisson-distribution/index//../../exercises/derive-poisson-distribution">derive-poisson-distribution</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/shell-model/index/">Shell Model</a> <span class="uuid">[shell-model]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/shell-model/index//../../exercises/construct-shell-model">construct-shell-model</a></li>
-                    
-                    <li><a href="/nodes/content/shell-model/index//../../exercises/how-many-protons">how-many-protons</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             <h3><a href="/nodes/content/two-batch-core/index/">Multi-batch core loading - the two-batch core</a> <span class="uuid">[two-batch-core]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/two-batch-core/index//../../exercises/TBD">TBD</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-                
-             
-             
-             
-                
-             
-             
-             
-             <h3><a href="/nodes/content/why-burnup/index/">Why is burnup the best indicator of fuel irradiation time</a> <span class="uuid">[why-burnup]</span></h3>
-                <ul>
-                    
-                    <li><a href="/nodes/content/why-burnup/index//../../exercises/why-burnup-a">why-burnup-a</a></li>
-                    
-                </ul>
-                
-                
-             
-             
-             
-                
-             
             </div>
         </div>
     </section>
