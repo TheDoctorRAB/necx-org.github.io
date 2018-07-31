@@ -10,6 +10,16 @@ layout: page
                 <li>{{ objective }}</li>
                 {% endfor %}
                 </ul>
+                <h2>Prerequisites</h2>
+                <ul>
+                {% for prereq in page.prerequisites %}
+                {% for node in site.nodes %}
+                {% if node.uuid == prereq %}
+                <li><a href="{{ node.permalink }}">{{ node.title }} [{{ node.uuid }}]</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                </ul>
                 <article class="post-content text-left">
                         {{content}}
                 </article>
