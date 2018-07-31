@@ -8,15 +8,14 @@ layout: page
                         {{ page.text }} 
 		</article>
                 {% if page.type == 'MultipleChoice' %} 
-                <ul>
+                <ol>
                 {% for option in page.options %}
                 <li>{{ option.value }}</li>
                 {% endfor %}
-                </ul>
+                </ol>
 		{% elsif page.type == "ShortAnswer" %}
                 {% endif %}
-                </ul>
-                                </div>
+                </div>
            </div>
     </section>
 
