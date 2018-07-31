@@ -19,6 +19,7 @@ color:
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: false
 
 # include nodes
 collections: 
