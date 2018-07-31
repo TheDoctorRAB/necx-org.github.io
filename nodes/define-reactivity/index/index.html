@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Shell Model</title>
+  <title>Reactivity</title>
     <meta name="viewport" content="width=device-width">
-  <meta name="description" content="OverviewThe most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.">
+  <meta name="description" content="Introduction">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://necx-org.github.io/nodes/shell-model/index/">
+  <link rel="canonical" href="https://necx-org.github.io/nodes/define-reactivity/index/">
   <link rel="alternate" type="application/rss+xml" title="NECX" href="https://necx-org.github.io/feed.xml">
   <link rel="shortcut icon" href="https://necx-org.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Shell Model</h2>
+                    <h2 class="section-heading">Reactivity</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 
@@ -188,7 +188,13 @@
                 <h2>Learning Objectives</h3>
                 <ul>
                 
-                <li>reproduce a shell model of an atom</li>
+                <li>Define the concept of reactivity as it pertains to the change in neutron multiplication</li>
+                
+                <li>Calculate the reactivity value for a given change in multiplication factor</li>
+                
+                <li>Describe and understand the units used to convey reactivity</li>
+                
+                <li>Relate the units of reactivity to the delayed neutron fraction \( \beta \)</li>
                 
                 </ul>
                 <h2>Prerequisites</h2>
@@ -248,35 +254,54 @@
                 
                 </ul>
                 <article class="post-content text-left">
-                        <h1 id="overview">Overview</h1>
-<p>The most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.</p>
+                        <h1 id="introduction">Introduction</h1>
 
-<p>A nucleus contains protons and neutrons. Protons carry a positive charge, and neutrons carry no charge. The nucleus is surrounded by shells of negatively-charged electrons.</p>
+<p>Reactivity is used to represent the <strong>fractional change</strong> in the neutron population between each generation; i.e., a reactivity greater than zero implies that the neutron population is increasing (power is increasing), whereas a negative reactivity implies that the neutron population is decreasing (decreasing power).</p>
 
-<p>Each shell can only hold a fixed number of electrons, and each shell essentially represents a principal energy level. The electrons orbit around the nucleus.</p>
+<p>Typically in the context of reactor operations, we refer to reactivity as a means of maintaining equilibrium (steady-state) conditions within the core. That is, we look at the sum of various reactivity components (positive and negative) to determine the conditions required to maintain steady-state operations (such as how much fresh fuel to add, how much chemical shim or burnable poisons to include, and how much negative reactivity is needed in our control rods to safely control the reactor).</p>
 
-<p>(Quantum physics has shown this is more of an electron cloud, and there is a limit to how precise one can simultaneously know the position or momentum of a particle; aka the Heisenberg Uncertainty Principle. For now though, we are only concerned with the Bohr shell model.)</p>
+<h2 id="reactivity-in-an-infinite-reactor">Reactivity in an infinite reactor</h2>
 
-<h2 id="example">Example</h2>
-<p>The calcuim atom contains 20 protons and 20 neutrons.</p>
+<p>For an infinitely large reactor (no leakage), the reactivity is defined in terms of the infinite multiplication factor (<script type="math/tex">k_\infty</script>) as:</p>
 
-<p><img src="../img/calcium.gif" alt="Ca shell atom" /></p>
+<script type="math/tex; mode=display">\rho = \frac{k_\infty - 1}{k_\infty}</script>
 
-<p>The uranium atom contains 92 protons, the number of neutrons will be different if the atom is <script type="math/tex">^{235}U</script> or <script type="math/tex">^{238}U</script>.</p>
+<h2 id="reactivity-for-a-finite-reactor">Reactivity for a finite reactor</h2>
 
-<p><img src="../img/uranium.jpg" alt="U shell atom" /></p>
+<script type="math/tex; mode=display">\rho = \frac{k - 1}{k}</script>
 
-<p>Each electron shell is label by its principal quantum number; e.g., 1, 2, 3, 4, etc., with the lower number closer to the nucleus.</p>
+<p>Recall from the six-factor formula, the finite multiplication factor is simply the infinite multiplication factor plus the fast (<script type="math/tex">P_F</script>) and thermal (<script type="math/tex">P_T</script>) non-leakage terms, i.e.:</p>
 
-<p>The <a href="https://ptable.com/">dynamic periodic table</a> gives a lot of information about all the elements.</p>
+<script type="math/tex; mode=display">k = P_{F} P_{T} k_\infty</script>
+
+<h1 id="units-of-reactivity-dollars-and-cents">Units of reactivity: Dollars and cents</h1>
+
+<p>Recall that the delayed neutron fraction of our reactor <script type="math/tex">\beta</script> plays a crucial role to reactor control and kinetics; i.e., so long as our reactor is delayed critical (or, more generally, “prompt subcritical” - i.e., where delayed neutrons push us to to <script type="math/tex">k \geq 1</script>), the reactor period is proportional to the delayed neutron lifetime (which is substantially longer than the prompt neutron lifetime); this is what makes our reactor controllable.</p>
+
+<p>As such, we define a special unit of reactivity change relative to the delayed neutron fraction in the reaction known as the dollar:</p>
+
+<script type="math/tex; mode=display">\text{Reactivity in \$} =\frac{\rho}{\beta}</script>
+
+<p>Thus, one dollar ($) of reactivity corresponds to the reactivity insertion required for the reactor to go from delayed critical to prompt critical.</p>
+
+<p>Similarly, one cent (¢) corresponds to one hundredth (0.01) of a dollar.</p>
+
+<p>For reference, recall that the delayed neutron fraction <script type="math/tex">\beta</script> for <script type="math/tex">{}^{235}</script>U is about 0.0065.</p>
+
+<h2 id="alternate-units-of-reactive-worth">Alternate units of reactive worth</h2>
+
+<p>Another alternate unit that frequently is used in characterizing the multiplication factor is pcm, or percent mille, which corresponds to one one-thousandth of one percent (or, 1E-5).</p>
+
+<p>For example, the reactor multiplication factor may change on the order a few hundred pcm between cold zero power and hot zero power conditions (due to the expansion of the moderator). This corresponds to a change in <script type="math/tex">k_{eff}</script> of:</p>
+
+<script type="math/tex; mode=display">\Delta k = 100\ \text{pcm} = 100 \cdot 10^{-5} = 0.001</script>
+
 
                 </article>
                 <h2>Assessments</h3>
                 <ul>
                 
-                <li><a href="/nodes/shell-model/index//../../exercises/construct-shell-model">construct-shell-model</a></li>
-                
-                <li><a href="/nodes/shell-model/index//../../exercises/how-many-protons">how-many-protons</a></li>
+                <li><a href="/nodes/define-reactivity/index//../../exercises/calculate-reactivity">calculate-reactivity</a></li>
                 
                 </ul>
             </div>

@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Shell Model</title>
+  <title>Multi-batch core loading - the two-batch core</title>
     <meta name="viewport" content="width=device-width">
-  <meta name="description" content="OverviewThe most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.">
+  <meta name="description" content="Introduction">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://necx-org.github.io/nodes/shell-model/index/">
+  <link rel="canonical" href="https://necx-org.github.io/nodes/two-batch-core/index/">
   <link rel="alternate" type="application/rss+xml" title="NECX" href="https://necx-org.github.io/feed.xml">
   <link rel="shortcut icon" href="https://necx-org.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Shell Model</h2>
+                    <h2 class="section-heading">Multi-batch core loading - the two-batch core</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 
@@ -188,7 +188,9 @@
                 <h2>Learning Objectives</h3>
                 <ul>
                 
-                <li>reproduce a shell model of an atom</li>
+                <li>Calculate the reactivity swing for single-batch versus multi-batch cores</li>
+                
+                <li>Communicate how gains in discharge burnup are achieved using multi-batch cores</li>
                 
                 </ul>
                 <h2>Prerequisites</h2>
@@ -207,6 +209,62 @@
                 
                 
                 
+                
+                
+                
+                
+                
+                <li><a href="../../define-reactivity/index">Reactivity [define-reactivity]</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="../../define-burnup/index">Define nuclear fuel burnup [define-burnup]</a></li>
                 
                 
                 
@@ -248,35 +306,84 @@
                 
                 </ul>
                 <article class="post-content text-left">
-                        <h1 id="overview">Overview</h1>
-<p>The most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.</p>
+                        <h1 id="introduction">Introduction</h1>
 
-<p>A nucleus contains protons and neutrons. Protons carry a positive charge, and neutrons carry no charge. The nucleus is surrounded by shells of negatively-charged electrons.</p>
+<p>As nuclear fuel is burned in a reactor, the reactive worth of the fuel steadily decreases. Generally speaking, we can assume the reactive worth of a fuel assembly decreases <em>linearly</em> with time in the core.</p>
 
-<p>Each shell can only hold a fixed number of electrons, and each shell essentially represents a principal energy level. The electrons orbit around the nucleus.</p>
+<p>The net change in reactivity of the fuel over a cycle is referred to as the <em>reactivity swing</em>, often specified as <script type="math/tex">\Delta \rho</script>.</p>
 
-<p>(Quantum physics has shown this is more of an electron cloud, and there is a limit to how precise one can simultaneously know the position or momentum of a particle; aka the Heisenberg Uncertainty Principle. For now though, we are only concerned with the Bohr shell model.)</p>
+<h1 id="reactivity-swing">Reactivity swing</h1>
 
-<h2 id="example">Example</h2>
-<p>The calcuim atom contains 20 protons and 20 neutrons.</p>
+<h2 id="reactivity-swing-in-a-single-batch-core">Reactivity swing in a single-batch core</h2>
 
-<p><img src="../img/calcium.gif" alt="Ca shell atom" /></p>
+<p>Consider the case of a core where all of the fuel is replaced at the end of the cycle. The reactive worth of the fuel as a function of time is:</p>
 
-<p>The uranium atom contains 92 protons, the number of neutrons will be different if the atom is <script type="math/tex">^{235}U</script> or <script type="math/tex">^{238}U</script>.</p>
+<script type="math/tex; mode=display">\rho \left( t \right ) = \rho_1 \left( \frac{1 - BU_1^{\left(1\right)} \left(t \right)}{BU_1^{\left(1\right)} \left(T\right)} \right)</script>
 
-<p><img src="../img/uranium.jpg" alt="U shell atom" /></p>
+<p>where 
+<script type="math/tex">\rho \left( t \right)</script> is the reactivity of the batch at time <em>t</em>, <script type="math/tex">\rho_1</script> is the reactivity loaded into the core at the begining of the cycle, <em>T</em> is the total cycle length, <script type="math/tex">BU_1^{\left(1\right)} \left( T \right)</script> is the final discharge burnup for a one-batch core (i.e., the end-of-cycle burnup), and <script type="math/tex">BU_1^{\left(1\right)} \left(t \right)</script> is the fuel burnup at time <em>t</em> for batch 1.</p>
 
-<p>Each electron shell is label by its principal quantum number; e.g., 1, 2, 3, 4, etc., with the lower number closer to the nucleus.</p>
+<h3 id="assumption">Assumption</h3>
 
-<p>The <a href="https://ptable.com/">dynamic periodic table</a> gives a lot of information about all the elements.</p>
+<p>In general, we assumes the decrease in reactivity is <em>linear</em> with burnup, which is generally valid after a few days of irradiation in the core.</p>
+
+<h2 id="the-two-batch-core">The two-batch core</h2>
+
+<p>Now consider the case where half of the fuel is replaced with fresh fuel at the end each cycle. Therefore, the fuel is burned for two cycles before being discharged from the core. The reactivity swing as a function of time is thus:</p>
+
+<script type="math/tex; mode=display">\rho \left( t \right) = \rho_1 
+  \frac{ \left[ 1 - \frac{BU_2^{\left(1\right)}\left(t\right) }{ BU_1\left(T\right) } \right] +
+         \left[ 1 - \frac{BU_2^{\left(2\right)}\left(t\right) }{ BU_1\left(T\right) } \right] }{2}</script>
+
+<p>Here, <script type="math/tex">BU_2^{1}\left(t\right)</script> refers to the burnup of the first batch of the two-batch core at time <em>t</em> and <script type="math/tex">BU_2^{2}\left(t\right)</script> refers to the burnup of the second (once-burned) batch at time <em>t</em>.</p>
+
+<h3 id="reactivity-swing-for-the-two-batch-core">Reactivity swing for the two-batch core</h3>
+
+<p>The new reactivity swing between the end of cycle and the new core (i.e., the amount of new reactivity that needs to be added to the core) is:</p>
+
+<script type="math/tex; mode=display">\rho_2 \left(0 \right) = 
+  \rho_1 \left( \frac{ \left[ 1 - \frac{BU_2^{\left(1\right)}\left(0 \right)}{BU_1 \left(T \right)} \right] + 
+  \left[ 1 - \frac{BU_2^{\left(2\right)} \left(0 \right)}{BU_1\left(T \right)} \right] 
+  }{2} \right) 
+  = \frac{ 1 + \frac{2}{3} }{2} = \frac{2}{3} \rho_1</script>
+
+<p>In other words, the reactivity swing is now <strong>a third lower</strong> for the two-batch core than for the one-batch core. In other words, we only need to supply two-thirds of the new reactive worth to the core at the end of the cycle, <strong>all for the same initial fuel enrichment</strong>.</p>
+
+<h1 id="effect-of-multi-batch-loading-on-burnup">Effect of multi-batch loading on burnup</h1>
+
+<h2 id="discharge-burnup-of-a-two-batch-core">Discharge burnup of a two-batch core</h2>
+
+<p>Let’s look at the end-of-cycle burnup for the two-batch core, i.e. where <script type="math/tex">\rho = 0</script>. If we assume equal burnups between the first and second cycles - i.e., <script type="math/tex">BU_2^{\left(1\right)}\left(T\right) = \frac{BU_2^{\left(2\right)}}{2}</script>, we have:</p>
+
+<script type="math/tex; mode=display">0 = \rho_1 
+  \frac{ 
+    \left[ 1 - \frac{BU_2 \left(T\right)}{BU_1 \left(T \right)} \right] +
+    \left[ 1 - \frac{BU_2 \left(T\right)}{BU_1 \left(T \right)} \right]
+  }{2}</script>
+
+<p>Solving for <script type="math/tex">BU_2\left(T \right)</script> in terms of <script type="math/tex">BU_1\left(T\right)</script>, we have:</p>
+
+<script type="math/tex; mode=display">BU_2\left(T\right) = \left[ \frac{4}{3} \right] BU_1 \left(T \right)</script>
+
+<p>In other words, the two-batch core represents a <strong>33% gain</strong> in terms of achievable discharge burnup over the single-batch core.</p>
+
+<h2 id="where-does-the-extra-burnup-come-from">Where does the extra burnup come from?</h2>
+
+<p>Multi-batch core loading allows us to squeeze out more burnup from the same amount of fuel - so is this a free lunch? What’s the “trade-off” we take for this? In other words, where is the extra burnup coming from?</p>
+
+<ul>
+  <li>To achieve a lower reactivity swing, multi-batch cores use a <strong>shorter cycle length</strong> (i.e., more frequent refueling outages)</li>
+  <li>Multi-batch cores also require less burnable poisons compared to a single-batch core to keep the core at-critical; in other words, higher burnup is achieved because we don’t “waste” neutrons on burnable absorbers.</li>
+  <li>Because we’re using our neutrons more efficiently, we’re burning more of the fissile material in the fuel, achieving higher fuel utilization.</li>
+</ul>
+
+<p>So is this a “free lunch?” No; we pay for it in terms of both shorter cycle length as well as better use of our neutrons in the core.</p>
 
                 </article>
                 <h2>Assessments</h3>
                 <ul>
                 
-                <li><a href="/nodes/shell-model/index//../../exercises/construct-shell-model">construct-shell-model</a></li>
-                
-                <li><a href="/nodes/shell-model/index//../../exercises/how-many-protons">how-many-protons</a></li>
+                <li><a href="/nodes/two-batch-core/index//../../exercises/TBD">TBD</a></li>
                 
                 </ul>
             </div>

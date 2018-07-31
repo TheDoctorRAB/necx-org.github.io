@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Shell Model</title>
+  <title>Why is burnup the best indicator of fuel irradiation time</title>
     <meta name="viewport" content="width=device-width">
-  <meta name="description" content="OverviewThe most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.">
+  <meta name="description" content="Why is burnup the best indicator">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://necx-org.github.io/nodes/shell-model/index/">
+  <link rel="canonical" href="https://necx-org.github.io/nodes/why-burnup/index/">
   <link rel="alternate" type="application/rss+xml" title="NECX" href="https://necx-org.github.io/feed.xml">
   <link rel="shortcut icon" href="https://necx-org.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Shell Model</h2>
+                    <h2 class="section-heading">Why is burnup the best indicator of fuel irradiation time</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 
@@ -188,11 +188,169 @@
                 <h2>Learning Objectives</h3>
                 <ul>
                 
-                <li>reproduce a shell model of an atom</li>
+                <li>Explain why burnup is used instead of time as an indication for how long fuel has been irradiated.</li>
                 
                 </ul>
                 <h2>Prerequisites</h2>
                 <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="../../define-burnup/index">Define nuclear fuel burnup [define-burnup]</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -248,35 +406,51 @@
                 
                 </ul>
                 <article class="post-content text-left">
-                        <h1 id="overview">Overview</h1>
-<p>The most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.</p>
+                        <h1 id="why-is-burnup-the-best-indicator">Why is burnup the best indicator</h1>
 
-<p>A nucleus contains protons and neutrons. Protons carry a positive charge, and neutrons carry no charge. The nucleus is surrounded by shells of negatively-charged electrons.</p>
+<p>Most often, we are interested in the way that irradiation has changed the
+nuclear fuel in a reactor.  There are changes in the composition, including
+the depletion of fissile material, the generation of fission products, and
+transmutation of actinides.  There are also changes in the fuel structure
+including swelling, porosity and cracks.  Those quantities typically depend
+most strongly on the neutron fluence that the fuel has experienced.</p>
 
-<p>Each shell can only hold a fixed number of electrons, and each shell essentially represents a principal energy level. The electrons orbit around the nucleus.</p>
+<h1 id="relationship-between-neutron-fluence-and-burnup">Relationship between neutron fluence and burnup</h1>
 
-<p>(Quantum physics has shown this is more of an electron cloud, and there is a limit to how precise one can simultaneously know the position or momentum of a particle; aka the Heisenberg Uncertainty Principle. For now though, we are only concerned with the Bohr shell model.)</p>
+<ul>
+  <li>Neutron fluence is the time integral of the neutron flux.</li>
+  <li>Specific thermal power at any time is directly related to the neutron flux at that time.</li>
+  <li>Burnup is the time integral of the specific thermal power.</li>
+  <li>Therefore, burnup is an engineering manifestation of the neutron fluence.</li>
+</ul>
 
-<h2 id="example">Example</h2>
-<p>The calcuim atom contains 20 protons and 20 neutrons.</p>
+<h1 id="relationship-between-burnup-and-time">Relationship between burnup and time</h1>
 
-<p><img src="../img/calcium.gif" alt="Ca shell atom" /></p>
+<p><img src="../img/fuel_response_v_time.svg" alt="Figure 1" style="height:400px;" /></p>
 
-<p>The uranium atom contains 92 protons, the number of neutrons will be different if the atom is <script type="math/tex">^{235}U</script> or <script type="math/tex">^{238}U</script>.</p>
+<p>Figure 1 shows a simple power history for a piece
+of nuclear fuel as a function of time.  There are three different power levels
+including a period in which there is no power.  During each of the periods of
+constant power, the burnup increases linearly, with a slope proportional to
+the power.  During the period of zero power, the burnup doesn’t change.  The
+final plot represents some quantity, f, that depends on the neutron fluence.
+It shows the same shape as the burnup plot.  All units are arbitrary.</p>
 
-<p><img src="../img/uranium.jpg" alt="U shell atom" /></p>
+<p><img src="../img/fuel_response_v_burnup.svg" alt="Figure 2" style="height:400px;" /></p>
 
-<p>Each electron shell is label by its principal quantum number; e.g., 1, 2, 3, 4, etc., with the lower number closer to the nucleus.</p>
+<p>Figure 2 shows the same power history as a
+function of the burnup.  The period with zero power does not appear in these
+plots because it is reduced to a single point on the burnup domain.
+Obviously, the slope of burnup vs burnup is constant (1).  Similarly, the
+quantity, f, that depends on fluence also experiences a constant slope when
+plotted vs burnup.</p>
 
-<p>The <a href="https://ptable.com/">dynamic periodic table</a> gives a lot of information about all the elements.</p>
 
                 </article>
                 <h2>Assessments</h3>
                 <ul>
                 
-                <li><a href="/nodes/shell-model/index//../../exercises/construct-shell-model">construct-shell-model</a></li>
-                
-                <li><a href="/nodes/shell-model/index//../../exercises/how-many-protons">how-many-protons</a></li>
+                <li><a href="/nodes/why-burnup/index//../../exercises/why-burnup-a">why-burnup-a</a></li>
                 
                 </ul>
             </div>

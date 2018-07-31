@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Shell Model</title>
+  <title>Multi-batch core loading - the n-batch core</title>
     <meta name="viewport" content="width=device-width">
-  <meta name="description" content="OverviewThe most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.">
+  <meta name="description" content="Characteristics of the N-batch core">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://necx-org.github.io/nodes/shell-model/index/">
+  <link rel="canonical" href="https://necx-org.github.io/nodes/n-batch-core/index/">
   <link rel="alternate" type="application/rss+xml" title="NECX" href="https://necx-org.github.io/feed.xml">
   <link rel="shortcut icon" href="https://necx-org.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Shell Model</h2>
+                    <h2 class="section-heading">Multi-batch core loading - the n-batch core</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 
@@ -188,7 +188,9 @@
                 <h2>Learning Objectives</h3>
                 <ul>
                 
-                <li>reproduce a shell model of an atom</li>
+                <li>Calculate the reactivity swing for single-batch versus multi-batch cores</li>
+                
+                <li>Communicate how gains in discharge burnup are achieved using multi-batch cores</li>
                 
                 </ul>
                 <h2>Prerequisites</h2>
@@ -207,6 +209,62 @@
                 
                 
                 
+                
+                
+                
+                
+                
+                <li><a href="../../define-reactivity/index">Reactivity [define-reactivity]</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="../../define-burnup/index">Define nuclear fuel burnup [define-burnup]</a></li>
                 
                 
                 
@@ -248,35 +306,74 @@
                 
                 </ul>
                 <article class="post-content text-left">
-                        <h1 id="overview">Overview</h1>
-<p>The most straightforward concept of the atom is the shell model, first proposed by Niels Bohr.</p>
+                        <h1 id="characteristics-of-the-n-batch-core">Characteristics of the N-batch core</h1>
 
-<p>A nucleus contains protons and neutrons. Protons carry a positive charge, and neutrons carry no charge. The nucleus is surrounded by shells of negatively-charged electrons.</p>
+<h2 id="assembly-burnup-after-n-cycles">Assembly burnup after n cycles</h2>
 
-<p>Each shell can only hold a fixed number of electrons, and each shell essentially represents a principal energy level. The electrons orbit around the nucleus.</p>
+<p>The burnup of a batch of assemblies after <em>n</em> cycles of an N-batch core is:</p>
 
-<p>(Quantum physics has shown this is more of an electron cloud, and there is a limit to how precise one can simultaneously know the position or momentum of a particle; aka the Heisenberg Uncertainty Principle. For now though, we are only concerned with the Bohr shell model.)</p>
+<script type="math/tex; mode=display">BU_N^{\left(n\right)} \left(T \right) = \left[\frac{ n BU_N \left(T \right) }{N} \right] \rvert_{n=1 \dots N}</script>
 
-<h2 id="example">Example</h2>
-<p>The calcuim atom contains 20 protons and 20 neutrons.</p>
+<h2 id="reactivity-swing">Reactivity swing</h2>
 
-<p><img src="../img/calcium.gif" alt="Ca shell atom" /></p>
+<h2 id="total-core-reactivity">Total core reactivity</h2>
 
-<p>The uranium atom contains 92 protons, the number of neutrons will be different if the atom is <script type="math/tex">^{235}U</script> or <script type="math/tex">^{238}U</script>.</p>
+<p>The total reactivity of the core at time <em>t</em> for the N-batch core is:</p>
 
-<p><img src="../img/uranium.jpg" alt="U shell atom" /></p>
+<script type="math/tex; mode=display">\rho_N \left( t \right) = \rho_1 \frac{ \sum_{n=1}^N \left[ 1 - \frac{BU_N^{\left(n \right)} \left(t \right) }{ BU_1 \left(T \right) } \right] }{N} \rho_1</script>
 
-<p>Each electron shell is label by its principal quantum number; e.g., 1, 2, 3, 4, etc., with the lower number closer to the nucleus.</p>
+<h2 id="final-assembly-discharge-burnup">Final assembly discharge burnup</h2>
 
-<p>The <a href="https://ptable.com/">dynamic periodic table</a> gives a lot of information about all the elements.</p>
+<p>The final assembly discharge burnup after <em>N</em> cycles is:</p>
+
+<script type="math/tex; mode=display">BU_N \left(T \right) = \left[ \frac{2 N}{N + 1} \right] BU_1 \left(T \right)</script>
+
+<p>The general relationship of the discharge burnup relative to the one-batch core is thus:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th># batches</th>
+      <th style="text-align: left"><script type="math/tex">\frac{ BU_N \left( T \right)}{BU_1 \left(T \right) }</script></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td style="text-align: left">4/3</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td style="text-align: left">3/2</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td style="text-align: left">8/5</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td style="text-align: left">5/3</td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\infty</script></td>
+      <td style="text-align: left">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="so-why-dont-we-use-as-many-batches-as-possible">So why don’t we use as many batches as possible…?</h2>
+
+<p>Using more batches comes with an inherent trade-off: shorter cycle length. Because the minimum outage time is generally fixed (given the sequence of activities required to shut down the core, unload the fuel, and reload the fuel), having too many cycles can lead to lower capacity factors (thus obviating the benefit of greater discharge burnup).</p>
 
                 </article>
                 <h2>Assessments</h3>
                 <ul>
                 
-                <li><a href="/nodes/shell-model/index//../../exercises/construct-shell-model">construct-shell-model</a></li>
-                
-                <li><a href="/nodes/shell-model/index//../../exercises/how-many-protons">how-many-protons</a></li>
+                <li><a href="/nodes/n-batch-core/index//../../exercises/TBD">TBD</a></li>
                 
                 </ul>
             </div>
