@@ -9,8 +9,8 @@ layout: page
 		</article>
                 {% if page.type == 'MultipleChoice' %} 
                 <ul>
-                {% for options in page.options %}
-                <li>{{ value }}</li>
+                {% for option in page.options %}
+                <li>{{ option.value }}</li>
                 {% endfor %}
                 </ul>
 		{% elsif page.type == "ShortAnswer" %}
